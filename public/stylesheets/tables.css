@@ -1,0 +1,81 @@
+/***** Tables *****/
+
+#prikaz-podataka .table .table__header {
+  padding: 16px 8px 0 16px;
+}
+
+#prikaz-podataka .table a > i {
+  color: var(--front-color-1);
+}
+
+#prikaz-podataka .dropdown-menu a {
+  /* border-radius: 0px; */
+  text-shadow: none;
+  font-weight: 500;
+}
+
+#prikaz-podataka .dropdown-item:hover,
+#prikaz-podataka .dropdown-item:active {
+  /* font-style: italic; */
+  color: var(--topbar-background);
+  background-color: var(--front-color-1);
+}
+
+#prikaz-podataka .table th {
+  padding: 16px;
+  background: var(--topbar-background);
+  text-transform: uppercase;
+  color: var(--front-color-1);
+  text-shadow: var(--text-shadow);
+  font-size: 16px;
+  font-weight: 300;
+  border: none;
+}
+
+#prikaz-podataka .table tbody {
+  font-weight: 400;
+}
+
+/* #prikaz-podataka .table-striped > tbody > tr:nth-child(even) > th, */
+#prikaz-podataka .table-striped > tbody > tr:nth-child(even) > td {
+  background-color: var(--table-strip);
+}
+
+#prikaz-podataka .table td {
+  border: none;
+  margin: 0;
+  padding: 0.6em 1em;
+}
+
+#prikaz-podataka .row-selected > td {
+  color: var(--topbar-background);
+  /* background-color: var(--front-color-1) !important; */
+  background-color: var(--front-color-1) !important;
+  background-color: var(--arrow-background) !important;
+}
+
+#prikaz-podataka td.cellSelected {
+  /* color: var(--topbar-background); */
+  background-color: white !important;
+}
+
+/* Admin table */
+#admin-table-wrapper .card-box {
+  padding: 0;
+  margin: 0;
+}
+
+#admin-table-wrapper .table th {
+  padding: 0 16px;
+  background: var(--topbar-background);
+  text-transform: uppercase;
+  color: var(--front-color-1);
+  text-shadow: var(--text-shadow);
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#admin-table-wrapper .table td {
+  margin: 0;
+  padding: 0 16px;
+}

@@ -1,0 +1,116 @@
+#sidebar-menu {
+  width: 100%;
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+  background-image: linear-gradient(rgb(105, 230, 219), rgb(51, 190, 200));
+  transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
+  transform-origin: center left;
+  color: var(--front-color-3);
+  text-shadow: var(--text-shadow);
+}
+
+#sidebar-menu.active {
+  margin-left: -250px;
+  transform: rotateY(100deg);
+}
+
+@media (max-width: 768px) {
+  #sidebar-menu {
+    margin-left: -250px;
+    transform: rotateY(100deg);
+  }
+  #sidebar-menu.active {
+    margin-left: 0;
+    transform: none;
+  }
+}
+
+/* #sidebar-menu .header {
+  padding: 1.2em;
+  background: var(--sidebar-active-color);
+} */
+
+#sidebar-menu ul.components {
+  /* padding: 1.2em 0; */
+  padding: 16px 0;
+  /* border-bottom: 1px solid #47748b; */
+}
+
+#sidebar-menu .footer {
+  padding: 0px 25px;
+  color: #fff;
+}
+
+#sidebar-menu ul,
+#sidebar-menu li {
+  border: 0;
+  font-weight: normal;
+  line-height: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  /* transition: all 0.3s; */
+}
+
+/* #sidebar-menu ul p {
+  color: var(--table-strip);
+  padding: 0.6em;
+} */
+
+#sidebar-menu a {
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 0.45s;
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+}
+
+#sidebar-menu ul > li > a {
+  padding: 0 10px;
+  font-size: 16px;
+  line-height: 2.5;
+}
+
+#sidebar-menu li li a {
+  /* padding: 4px 0 4px 28px; */
+  padding-left: 28px;
+  font-size: 14px;
+  color: inherit;
+  background: rgb(51, 190, 200);
+}
+
+#sidebar-menu a[aria-expanded="true"] {
+  background: rgb(51, 190, 200);
+  /* background: red; */
+}
+
+#sidebar-menu a:hover {
+  /* font-style: italic; */
+  color: #fff;
+  background: transparent;
+  /* background: var(--sidebar-back-color); */
+}
+
+#sidebar-menu a.active {
+  color: #fff;
+}
+
+/******* dropdown arow *******/
+#sidebar-menu [data-toggle="collapse"]:after {
+  float: right;
+  /* font-family: "Font Awesome\ 5 Free"; */
+  font-family: "Material Icons";
+  font-size: 18px;
+  content: "\e5cf";
+  transition: all 0.3s;
+}
+#sidebar-menu [data-toggle="collapse"].collapsed:after {
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  text-shadow: 1px -1px 1px #666, 2px -2px 4px black;
+}

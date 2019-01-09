@@ -1,0 +1,10 @@
+//- View error on page
+
+extends layout-view
+
+block content
+
+  div.container.word-wrap
+    h1= message
+    h2= error.status
+    pre #{error.stack}

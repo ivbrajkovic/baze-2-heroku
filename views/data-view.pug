@@ -1,0 +1,19 @@
+//- View db data on the page
+//- h3 DEBUG - All product test
+
+- data = db_data[0]
+if data
+  table#editable.table.table-striped.shadow-2      
+    thead
+      tr
+        each val, index in data
+          th= index
+    tbody
+      each val in db_data
+        tr
+          each v in val
+            td= v
+else
+  h3 Neispravan prikaz podataka, 
+    br 
+    | podaci nisu dohvačeni iz baze podataka.

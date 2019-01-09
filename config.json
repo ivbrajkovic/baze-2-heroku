@@ -1,0 +1,12 @@
+{
+  "name": "Vinarija d.o.o.",
+  "address": "127.0.0.1",
+  "ports": { "http": "3000", "https": "3001" },
+  "database": {
+    "db": "postgres",
+    "user": "ivanbrajkovic",
+    "host": "localhost",
+    "port": "5432",
+    "initial": "pivovara_test"
+  }
+}

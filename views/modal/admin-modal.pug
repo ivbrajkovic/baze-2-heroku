@@ -1,0 +1,28 @@
+//- Admin console
+
+#admin-modal(class="modal fade fade in", tabindex="-1", role="dialog", data-keyboard="false" data-backdrop="static")
+  .modal-dialog.modal-lg.modal-dialog-centered(role="document")
+    .modal-content.form-wrapper.rounded-0
+
+      // Modal Header
+      .modal-header
+        h4.modal-title Custom SQL command
+        button.close(type='button', data-dismiss='modal') ×
+
+      // Modal body
+      .modal-body
+        label.form-switch
+          input.connect-socket(type="checkbox")
+          i
+          |Socket connect
+
+        div#admin-table-wrapper.mb-4
+        
+        //div.container-fluid
+        input#input-command(type="text", placeholder="select * from table;", value="select version(); select now()")
+        button.btn.btn-danger.float-right.rounded-0.mt-1(type='button', data-dismiss='modal') Cancel
+        button#btn-send.btn.btn-success.float-right.rounded-0.mt-1.mr-2 Send
+
+      //-Modal footer
+        .modal-footer
+          button.btn.btn-danger.rounded-0(type='button', data-dismiss='modal') Close

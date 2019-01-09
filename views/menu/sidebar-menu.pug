@@ -1,0 +1,39 @@
+//- sidebar menu
+
+nav#sidebar-menu.shadow-2
+  //.header
+    //h3 Test Header 1    
+  ul.components
+    //p Test Header 2    
+    li
+      a(href="#prikaz-submenu", data-toggle="collapse", aria-expanded="true") Prikaz
+      ul#prikaz-submenu.collapse.show
+        li
+          a#view-all-product.active(href="#") Svi proizvodi
+        li
+          a(href="#") Grežđe
+        li
+          a(href="#") Boca
+
+    li
+      a.collapsed(href="#unos-submenu", data-toggle="collapse", aria-expanded="false") Unos
+      ul#unos-submenu.collapse
+        li
+          a#manage-tables(href="#") Upravljanje tablicama
+        li
+          a(href="#") Page 2
+        li
+          a(href="#") Page 3
+        
+        //-li
+          div.switch-container
+            label.form-switch
+              input.connect-socket(type="checkbox")
+              i
+              |Socket connect
+
+  .footer
+    label.form-switch
+      input.connect-socket(type="checkbox")
+      i
+      |Socket connect

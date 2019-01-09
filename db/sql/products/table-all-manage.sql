@@ -1,0 +1,1 @@
+SELECT table_all_json();

@@ -1,0 +1,1 @@
+SELECT insert_row_json(${data})

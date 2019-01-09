@@ -1,0 +1,98 @@
+//- default view page
+
+doctype html
+html
+	head
+		//Meta
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+		//Bootstrap
+		link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css") 
+
+		//Fonts
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah")
+		//-link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700")
+		//-link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Poppins:300,400,500")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+
+		//Styles
+		link(rel="stylesheet", href="../stylesheets/main.css")
+		link(rel="stylesheet", href="../stylesheets/menu/topbar-menu.css")
+		link(rel="stylesheet", href="../stylesheets/menu/sidebar-menu.css")
+		link(rel="stylesheet", href="../stylesheets/from-wrapper.css")
+		link(rel="stylesheet", href="../stylesheets/tables.css")
+		//-link(rel="stylesheet", href="../stylesheets/utility.css")
+		link(rel="stylesheet", href="../stylesheets/switch.css")
+		link(rel="stylesheet", href="../stylesheets/modal.css")
+		link(rel="stylesheet", href="../stylesheets/theme.css")
+		link(rel="stylesheet", href="../stylesheets/animate.css")
+		link(rel="stylesheet", href="../stylesheets/waves.css")
+
+		//-script(type='text/javascript', id='lt_ws', src='http://localhost:5678/socket.io/lighttable/ws.js')
+
+		title Vinoteka d.o.o.
+
+	body.theme-gradient-light-3
+
+		//==============================================================
+		//Modal Forms
+		//==============================================================
+		include ./modal/admin-modal.pug		
+		//-include ./insertModal.pug
+		
+		//==============================================================
+		//Topbar Menu
+		//==============================================================
+		include ./menu/topbar-menu.pug
+
+		//==============================================================
+		//Start page content here
+		//==============================================================
+		.wrapper
+			//==============================================================
+			//Sidebar Menu
+			//==============================================================
+			include ./menu/sidebar-menu.pug
+
+			#content
+				a#sidebar-toggler.shadow-2
+					span.top-bar
+					span.bottom-bar
+				
+				i.fas.fa-ellipsis-v
+				//==============================================================
+				//Dinamic content
+				//==============================================================
+				#prikaz-podataka.container
+					block content
+
+		//Bootstrap
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
+		script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js")
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.3/js/bootstrap-select.min.js')
+
+		//Socket.IO
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js")
+
+		//Sweetalert2
+		script(src="https://cdn.jsdelivr.net/npm/sweetalert2@7.32.2/dist/sweetalert2.all.min.js")
+		
+		//Custom
+		//-script(src="../javascripts/mindmup-editabletable.js")
+		//-script(src="../javascripts/numeric-input-example.js")
+		script(src="../javascripts/editable.js")
+		script(src="../javascripts/waves.js")
+		script(src="../javascripts/utility.js")
+		script(src="../javascripts/main.js")
+
+
+		//-script.
+			//$('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+			//$('#editable').editableTableWidget();
+			//$('.editable').editableWidget();
+			//Waves.attach('.button', ['waves-button', 'waves-float']);
+			//Waves.init();
+		

@@ -1,0 +1,106 @@
+/***** Form Wrapper *****/
+
+.form-wrapper {
+  background: #f5f5f5;
+}
+
+.form-wrapper h2 {
+  background: var(--topbar-background);
+  text-transform: uppercase;
+  color: var(--front-color-1);
+  font-size: 18px;
+  font-weight: 300;
+  padding: 20px;
+  /* margin: -30px -30px 30px -30px; */
+  margin: 0;
+}
+
+.form-wrapper form {
+  padding: 30px;
+}
+
+.form-wrapper input[type="text"]/*,
+.form-wrapper input[type="date"],
+.form-wrapper input[type="datetime"],
+.form-wrapper input[type="email"],
+.form-wrapper input[type="number"],
+.form-wrapper input[type="search"],
+.form-wrapper input[type="time"],
+.form-wrapper input[type="url"],
+.form-wrapper input[type="password"],
+.form-wrapper textarea,
+.form-wrapper select*/ {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border-radius: 0px !important;
+  -webkit-appearance: none !important;
+  -webkit-border-radius: 0px !important;
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  margin-bottom: 10px;
+  height: 45px;
+}
+
+/* .form-wrapper textarea {
+  resize: none;
+  overflow: hidden;
+}
+.form-wrapper input[type="button"],
+.form-wrapper input[type="submit"] {
+  -moz-box-shadow: inset 0px 1px 0px 0px #45d6d6;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #45d6d6;
+  box-shadow: inset 0px 1px 0px 0px #45d6d6;
+  background-color: #2cbbbb;
+  border: 1px solid #27a0a0;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 8px 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.form-wrapper input[type="button"]:hover,
+.form-wrapper input[type="submit"]:hover {
+  background: linear-gradient(to bottom, #34caca 5%, #30c9c9 100%);
+  background-color: #34caca;
+} */
+
+.form-wrapper .form-control,
+.form-wrapper .btn-light {
+  color: #212529;
+  background-color: transparent;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0px !important;
+  -webkit-appearance: none !important;
+  -webkit-border-radius: 0px !important;
+  font-weight: 400 !important;
+}
+
+.form-wrapper .dropdown-item.active,
+.form-wrapper .dropdown-item:active {
+  text-decoration: none;
+  color: var(--topbar-background) !important;
+  background-color: var(--front-color-1);
+}
+
+.form-wrapper .bootstrap-select .dropdown-toggle .filter-option {
+  padding: 7px;
+}
+
+.form-wrapper .dropdown-menu {
+  border-radius: 0px !important;
+  -webkit-appearance: none !important;
+  -webkit-border-radius: 0px !important;
+}
+
+.form-wrapper ::placeholder {
+  color: rgb(150, 150, 150) !important;
+  /* font-weight: 100; */
+}
