@@ -7,6 +7,7 @@ nav#sidebar-menu.shadow-2
     //p Test Header 2    
     li
       a(href="#prikaz-submenu", data-toggle="collapse", aria-expanded="true") Prikaz
+        i.material-icons expand_more
       ul#prikaz-submenu.collapse.show
         li
           a#view-all-product.active(href="#") Svi proizvodi
@@ -17,9 +18,10 @@ nav#sidebar-menu.shadow-2
 
     li
       a.collapsed(href="#unos-submenu", data-toggle="collapse", aria-expanded="false") Unos
+        i.material-icons expand_more
       ul#unos-submenu.collapse
         li
-          a#manage-tables(href="#") Upravljanje tablicama
+          a#manage-tables(href="#") Sve tablice
         li
           a(href="#") Page 2
         li

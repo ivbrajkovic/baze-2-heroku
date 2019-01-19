@@ -23,8 +23,6 @@ module.exports = {
   products: {
     allTablesDB: sql("products/all-tables-db.sql"),
     view_all_product: sql("products/view-all-product.sql"),
-    // allGrozde: sql("products/allGrozde.sql"),
-    // addSelect: sql("products/addSelect.sql"),
     table_all_manage: sql("products/table-all-manage.sql"),
     row_delete: sql("products/row-delete.sql"),
     row_update: sql("products/row-update.sql"),

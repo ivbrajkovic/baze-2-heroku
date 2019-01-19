@@ -1,0 +1,34 @@
+//#contact
+.intro-header.random-3
+  .overlay
+    .container
+      .row
+        .col-lg-12
+          .intro-message
+            a(href='#')
+              h1 Kontakt
+            h3 obratite nam se sa povjerenjem
+.contact-container
+  form#contact-form.rounded-0.shadow-2(method='post')
+    div
+      h2.text-center.mb-3 Javite nam se
+      p
+        | Ako Trebate informacije ili Vame je potrebna naša pomoć, obratite nam se sa povjerenjem. Naš stručan tim suradnika Vam soji na raspolaganju, te odgovara promptno i stručno na sve Vaše upite i zahtijeve.
+    .form-group.d-flex.justify-content-center
+      div.mr-4
+        input#radio1.contact-input-radio(type='radio', checked='checked', name='choice')
+        label.radio-label(for='radio1') Informacije
+      div
+        input#radio2.contact-input-radio(type='radio', name='choice')
+        label.radio-label(for='radio2') Zatraži pomoć
+    .form-group
+      input#contact-ime.form-control.rounded-0.drop-shadow(type='text', name='name', required='', placeholder='Ime', minlength='3', title='Unesite najmanje 3 slova')
+    .form-group
+      input#contact-email.form-control.rounded-0.drop-shadow(type='email', name='email', required='', placeholder='Email', pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
+      .form-group
+      input#contact-ime.form-control.rounded-0.drop-shadow(type='text', name='subject', required='', placeholder='Subject', minlength='3', title='Unesite najmanje 3 slova')
+    //-.form-group.contact-togle-select
+    .form-group
+      textarea.form-control.rounded-0.drop-shadow(rows='14', name='message', required='', placeholder='Poruka', maxlength='10')
+    .form-group.text-right.mb-0
+      button.btn.btn-success.rounded-0(type='submit') Send

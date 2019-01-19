@@ -12,6 +12,7 @@
 
   const btn_send = document.getElementById("btn-send");
   const admin_table = document.getElementById("admin-table-wrapper");
+  const topbar_menu = document.getElementById("topbar-menu");
   const sidebar_menu = document.getElementById("sidebar-menu");
   const prikaz_podataka = document.getElementById("prikaz-podataka");
   const input_command = document.getElementById("input-command");
@@ -22,7 +23,7 @@
   Waves.attach("#sidebar-menu a");
   Waves.init();
 
-  //#region socket
+  //#region Socket
   //
   // let socket = io("https://localhost:3001", { secure: true });
   // const socket = io({
@@ -30,6 +31,7 @@
   // });
   //
   //
+  // Custom handshake
   socket.on("hello", function(data) {
     console.log(data);
     socket.emit("hello", {
@@ -37,69 +39,80 @@
     });
   });
   //
+  // On info received from server
   socket.on("info", data => {
     if (isAdminModalOpen) admin_table.createTableInfo(data);
-    // prikaz_podataka.createTableInfo(data);
-    else {
-      // alert(data);
-      Swal("Uspješno izvršeno!", "", "success");
-    }
+    else Swal("Uspješno izvršeno!", "", "success");
   });
   //
+  // On data received from db
   socket.on("data", data => {
-    //console.log(data);
     if (isAdminModalOpen) admin_table.createTable(data);
     else prikaz_podataka.createTable(data);
   });
   //
   //#endregion
 
-  //#region topbar menu
+  //#region Topbar
   //
-  [
-    ...document.getElementById("topbar-dropdown").getElementsByTagName("a")
-  ].forEach(element => {
-    if (element.getAttribute("href") == location.pathname)
-      element.parentNode.classList.add("active");
-  });
-
-  document.getElementById("contact-form").onclick = () => {
-    helper.deleteAll(prikaz_podataka);
+  // Hide topbar dropdown on click in mobile view
+  document.getElementById("topbar-dropdown").onclick = function() {
+    this.classList.remove("show");
   };
   //
-  //
-  // $("#-404").on("click", () => {
-  //   console.log(td);
-
-  // alert(isAdminModalOpen);
-  // let items = Array.prototype.slice
-  //   .call(document.querySelectorAll("*"))
-  //   .map(function(element) {
-  //     let listeners = getEventListeners(element);
-  //     return {
-  //       element: element,
-  //       listeners: Object.keys(listeners).map(function(k) {
-  //         return { event: k, listeners: listeners[k] };
-  //       })
-  //     };
-  //   })
-  //   .filter(function(item) {
-  //     return item.listeners.length;
-  //   });
-  // console.log(items);
+  // Set active link from topbar based on address
+  // [
+  //   ...document.getElementById("topbar-dropdown").getElementsByTagName("a")
+  // ].forEach(element => {
+  //   if (element.getAttribute("href") == location.pathname)
+  //   //if (element.getAttribute("id") == prikaz_podataka.getAttribute("data"))
+  //     element.parentNode.classList.add("active");
   // });
+  // document
+  //   .getElementById("topbar-dropdown")
+  //   .addEventListener("click", function() {});
+  //
+  // View about form
+  document
+    .getElementById("view-proizvod")
+    .addEventListener("click", function() {
+      helper.deleteAll(prikaz_podataka);
+      // prikaz_podataka.setAttribute("data", "proizvod");
+      // helper.getURL(prikaz_podataka, "/proizvod");
+      document.getElementById("view-all-product").click();
+      topbar_menu
+        .querySelector("li.nav-item.active")
+        .classList.remove("active");
+      this.parentNode.classList.add("active");
+    });
+  //
+  // View about form
+  document.getElementById("view-about").addEventListener("click", function() {
+    helper.deleteAll(prikaz_podataka);
+    helper.getURL(prikaz_podataka, "/about");
+    topbar_menu.querySelector("li.nav-item.active").classList.remove("active");
+    this.parentNode.classList.add("active");
+  });
+  //
+  // View contact form
+  document.getElementById("view-contact").addEventListener("click", function() {
+    helper.deleteAll(prikaz_podataka);
+    helper.getURL(prikaz_podataka, "/contact");
+    topbar_menu.querySelector("li.nav-item.active").classList.remove("active");
+    this.parentNode.classList.add("active");
+  });
   //
   //#endregion
 
-  //#region sidebar_menu menu
+  //#region Sidebar
   //
-  // Animate sidebar_menu toggler
+  // Animate sidebar and sidebar toggler
   sidebar_toggler.onclick = function() {
     this.classList.toggle("open");
     sidebar_menu.classList.toggle("active");
   };
   //
-  // Toggle selected link
+  // Toggle sidebar selected link
   sidebar_menu.querySelectorAll("li a").forEach(element => {
     element.onclick = function() {
       if (!this.classList.contains("active")) {
@@ -115,6 +128,7 @@
     .addEventListener("click", function() {
       //event.preventDefault();
       if (!socket.connected) {
+        // view error msgbox
         Swal({
           type: "error",
           title: "Prikljčak nije povezan",
@@ -123,14 +137,17 @@
           customClass: "animated flipInY"
         });
       } else {
+        // Recquest all tables from db
         socket.emit("command", { mode: "manage" });
       }
     });
   //
-  // Socket switch
+  // Socket switch,
+  // retreive list of all socket switches on the app
   [...connect_socket].forEach(value => {
     value.addEventListener("change", event => {
-      event.preventDefault();
+      //event.preventDefault();
+      // Toggle socket connected
       if (socket.connected) {
         socket.close();
         [...connect_socket].forEach(val => {
@@ -153,9 +170,7 @@
   //
   // Show all products
   document.getElementById("view-all-product").onclick = () => {
-    while (prikaz_podataka.firstChild)
-      prikaz_podataka.removeChild(prikaz_podataka.firstChild);
-    // loadHome("all1");
+    helper.deleteAll(prikaz_podataka);
     helper.getURL(prikaz_podataka, "/all");
   };
   // Open admin modal
@@ -163,8 +178,9 @@
     adminModal.modal();
   };
   //
-  // On key
+  // On key press on admin modal
   adminModal.keypress(function(e) {
+    // On press enter send command
     if (e.which == 13) btn_send.click();
   });
   //
@@ -179,6 +195,7 @@
   });
   //
   btn_send.onclick = () => {
+    // Delete tables on admin modal ( the old way :) )
     admin_table.innerHTML = "";
     socket.emit("command", { mode: "admin", data: input_command.value });
   };
@@ -189,7 +206,8 @@
   //
   // Open unos proizvoda modal
   $("#unosProizvoda").click(() => {
-    $("#unosModal").modal();
+    // TO DO
+    // $("#unosModal").modal();
   });
   //
   // On show unos modal
@@ -521,4 +539,7 @@
   });
   //
   //#endregion
+
+  document.getElementById("view-all-product").click();
+  document.getElementById("view-proizvod").parentNode.classList.add("active");
 })();

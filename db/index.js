@@ -25,8 +25,6 @@ monitor.attach(initOptions);
 monitor.setTheme("matrix");
 
 // Preparing the connection details:
-// postgres://ivanbrajkovic:@localhost:5432/pivovara_test
-// heroku pg:push postgres://ivanbrajkovic:@localhost:5432/pivovara_test DATABASE_URL --app vinarija
 const conn =
   conf.database.db +
   "://" +

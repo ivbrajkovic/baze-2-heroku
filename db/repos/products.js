@@ -11,21 +11,6 @@ class ProductsRepository {
     // this.pgp = pgp;
   }
 
-  // Creates the table;
-  // create() {
-  //   return this.db.none(sql.create);
-  // }
-
-  // // Drops the table;
-  // drop() {
-  //   return this.db.none(sql.drop);
-  // }
-
-  // // Removes all records from the table;
-  // empty() {
-  //   return this.db.none(sql.empty);
-  // }
-
   // Retreive admin table
   adminTables(query) {
     return this.db.multi(query);

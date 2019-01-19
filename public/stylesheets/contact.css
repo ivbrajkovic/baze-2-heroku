@@ -1,0 +1,74 @@
+.contact-container {
+  /* background: #f1f7fc; */
+  padding: 45px 0;
+}
+
+@media (max-width: 1199px) {
+  .contact-container {
+    padding: 20px 0;
+  }
+}
+
+#contact-form {
+  max-width: 480px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 40px;
+  color: #505e6c;
+}
+
+@media (max-width: 767px) {
+  #contact-form {
+    padding: 30px;
+    /*box-shadow:none;*/
+  }
+}
+
+#contact-form p {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+#contact-form p:last-child {
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+#contact-form .radio-label {
+  position: relative;
+  padding-left: 15px;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+#contact-form .form-control {
+  height: 42px !important;
+}
+
+#contact-form .form-control {
+  height: 42px !important;
+}
+
+#contact-form textarea {
+  min-height: 100px;
+  max-height: 260px;
+  padding-top: 10px;
+  resize: vertical;
+}
+
+#contact-form button {
+  font-size: 14px;
+  padding: 8px 18px;
+  width: 85px;
+  text-decoration: none;
+  font-weight: 500 !important;
+}
+
+#contact-form button.btn-success {
+  background-color: rgb(0, 150, 150);
+}
+
+#contact-form button.btn-success:hover {
+  background-color: rgb(0, 190, 190);
+}

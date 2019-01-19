@@ -1,6 +1,6 @@
 //- Top menu
 
-nav#topbar-menu.navbar.bg-dark.navbar-dark.fixed-top.navbar-expand-md
+nav#topbar-menu.navbar.bg-dark.navbar-dark.fixed-top.shadow-2.navbar-expand-md
   div.container
     a.navbar-brand(href="#") Vinoteka d.o.o.
     button.navbar-toggler(type="button", data-toggle="collapse", data-target="#topbar-dropdown")
@@ -9,14 +9,14 @@ nav#topbar-menu.navbar.bg-dark.navbar-dark.fixed-top.navbar-expand-md
     div#topbar-dropdown.collapse.navbar-collapse.justify-content-end
       ul.navbar-nav
         li.nav-item
-          a.nav-link(href="/") Proizvod
+          a#view-proizvod.nav-link(href="#") Proizvod
         li.nav-item
-          a.nav-link(href="/insert") Podaci
+          a#view-podaci.nav-link(href="#") Podaci
         li.nav-item
           a#view-admin-modal.nav-link(href="#") Admin
         li.nav-item
-          a.nav-link(href="#") O Nama
+          a#view-about.nav-link(href="#") O Nama
         li.nav-item
-          a#contact-form.nav-link(href="#") Kontakt
-        li.nav-item
+          a#view-contact.nav-link(href="#") Kontakt
+        //-li.nav-item
           a#-404.nav-link(href="#") 404

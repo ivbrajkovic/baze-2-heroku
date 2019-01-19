@@ -18,7 +18,6 @@ html
 		link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
 
 		//Styles
-		link(rel="stylesheet", href="../stylesheets/main.css")
 		link(rel="stylesheet", href="../stylesheets/menu/topbar-menu.css")
 		link(rel="stylesheet", href="../stylesheets/menu/sidebar-menu.css")
 		link(rel="stylesheet", href="../stylesheets/from-wrapper.css")
@@ -29,6 +28,10 @@ html
 		link(rel="stylesheet", href="../stylesheets/theme.css")
 		link(rel="stylesheet", href="../stylesheets/animate.css")
 		link(rel="stylesheet", href="../stylesheets/waves.css")
+		link(rel="stylesheet", href="../stylesheets/rotating-card.css")
+		link(rel="stylesheet", href="../stylesheets/contact.css")
+		link(rel="stylesheet", href="../stylesheets/main.css")
+
 
 		//-script(type='text/javascript', id='lt_ws', src='http://localhost:5678/socket.io/lighttable/ws.js')
 
@@ -41,7 +44,7 @@ html
 		//==============================================================
 		include ./modal/admin-modal.pug		
 		//-include ./insertModal.pug
-		
+
 		//==============================================================
 		//Topbar Menu
 		//==============================================================
@@ -60,13 +63,16 @@ html
 				a#sidebar-toggler.shadow-2
 					span.top-bar
 					span.bottom-bar
-				
+
 				i.fas.fa-ellipsis-v
 				//==============================================================
 				//Dinamic content
 				//==============================================================
 				#prikaz-podataka.container
 					block content
+
+		//-a#back-to-top.btn.btn-primary.back-to-top.no-radius(role='button', href='#')
+			i.icon-arrow-up(style='font-size:1.5rem;')
 
 		//Bootstrap
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
@@ -79,20 +85,20 @@ html
 
 		//Sweetalert2
 		script(src="https://cdn.jsdelivr.net/npm/sweetalert2@7.32.2/dist/sweetalert2.all.min.js")
-		
+
 		//Custom
 		//-script(src="../javascripts/mindmup-editabletable.js")
 		//-script(src="../javascripts/numeric-input-example.js")
 		script(src="../javascripts/editable.js")
 		script(src="../javascripts/waves.js")
 		script(src="../javascripts/utility.js")
+		//script(src="../javascripts/contact.js")
 		script(src="../javascripts/main.js")
 
 
 		//-script.
-			//$('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
-			//$('#editable').editableTableWidget();
-			//$('.editable').editableWidget();
-			//Waves.attach('.button', ['waves-button', 'waves-float']);
-			//Waves.init();
-		
+		//$('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+		//$('#editable').editableTableWidget();
+		//$('.editable').editableWidget();
+		//Waves.attach('.button', ['waves-button', 'waves-float']);
+		//Waves.init();

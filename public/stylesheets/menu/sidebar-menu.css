@@ -1,4 +1,5 @@
 #sidebar-menu {
+  padding-top: 60px;
   width: 100%;
   min-width: 250px;
   max-width: 250px;
@@ -68,16 +69,17 @@
   display: block;
 }
 
-#sidebar-menu ul > li > a {
-  padding: 0 10px;
+#sidebar-menu > ul > li > a {
+  padding: 10px 10px 0 30px;
   font-size: 16px;
   line-height: 2.5;
 }
 
 #sidebar-menu li li a {
   /* padding: 4px 0 4px 28px; */
-  padding-left: 28px;
+  padding-left: 50px;
   font-size: 14px;
+  line-height: 2.5;
   color: inherit;
   background: rgb(51, 190, 200);
 }
@@ -99,15 +101,31 @@
 }
 
 /******* dropdown arow *******/
-#sidebar-menu [data-toggle="collapse"]:after {
+/* #sidebar-menu [data-toggle="collapse"]:after {
   float: right;
-  /* font-family: "Font Awesome\ 5 Free"; */
   font-family: "Material Icons";
   font-size: 18px;
   content: "\e5cf";
   transition: all 0.3s;
 }
 #sidebar-menu [data-toggle="collapse"].collapsed:after {
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  text-shadow: 1px -1px 1px #666, 2px -2px 4px black;
+} */
+
+/******* dropdown arow *******/
+#sidebar-menu [data-toggle="collapse"] > i {
+  margin-top: 10px;
+  float: right;
+  font-family: "Material Icons";
+  font-size: 18px;
+  content: "\e5cf";
+  transition: all 0.3s;
+}
+#sidebar-menu [data-toggle="collapse"].collapsed > i {
   -ms-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   -o-transform: rotate(90deg);

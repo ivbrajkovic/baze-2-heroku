@@ -80,6 +80,13 @@
   /* animation: pulse 1.5s infinite; */
 }
 
+@media (max-width: 767px) {
+  #topbar-dropdown li::before {
+    margin-top: 0px;
+    height: 100%;
+  }
+}
+
 /* @keyframes pulse {
   0% {
     opacity: 0;
