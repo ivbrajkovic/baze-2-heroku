@@ -56,9 +56,21 @@
   //#region Topbar
   //
   // Hide topbar dropdown on click in mobile view
-  document.getElementById("topbar-dropdown").onclick = function() {
+  document.getElementById("topbar-dropdown").onclick = function(event) {
     this.classList.remove("show");
+    // console.log("click: ", event.target.tagName);
+    if (event.target.tagName == "A") SetTopbarLinkActive(event.target);
   };
+  //
+  function SetTopbarLinkActive(node) {
+    if (!node.parentNode.classList.contains("active")) {
+      document
+        .getElementById("topbar-dropdown")
+        .querySelector("li.nav-item.active")
+        .classList.remove("active");
+      node.parentNode.classList.add("active");
+    }
+  }
   //
   // Set active link from topbar based on address
   // [
@@ -80,26 +92,18 @@
       // prikaz_podataka.setAttribute("data", "proizvod");
       // helper.getURL(prikaz_podataka, "/proizvod");
       document.getElementById("view-all-product").click();
-      topbar_menu
-        .querySelector("li.nav-item.active")
-        .classList.remove("active");
-      this.parentNode.classList.add("active");
     });
   //
   // View about form
   document.getElementById("view-about").addEventListener("click", function() {
     helper.deleteAll(prikaz_podataka);
     helper.getURL(prikaz_podataka, "/about");
-    topbar_menu.querySelector("li.nav-item.active").classList.remove("active");
-    this.parentNode.classList.add("active");
   });
   //
   // View contact form
   document.getElementById("view-contact").addEventListener("click", function() {
     helper.deleteAll(prikaz_podataka);
     helper.getURL(prikaz_podataka, "/contact");
-    topbar_menu.querySelector("li.nav-item.active").classList.remove("active");
-    this.parentNode.classList.add("active");
   });
   //
   //#endregion
@@ -112,15 +116,18 @@
     sidebar_menu.classList.toggle("active");
   };
   //
-  // Toggle sidebar selected link
-  sidebar_menu.querySelectorAll("li a").forEach(element => {
-    element.onclick = function() {
-      if (!this.classList.contains("active")) {
-        sidebar_menu.querySelector("li a.active").classList.remove("active");
-        this.classList.add("active");
-      }
-    };
+  // Add on click even listener on all links with id on sidebar
+  sidebar_menu.querySelectorAll("li a[id]").forEach(element => {
+    element.addEventListener("click", SetSidebarLinkActive);
   });
+  //
+  // Set active link on side bar
+  function SetSidebarLinkActive() {
+    if (!this.classList.contains("active")) {
+      sidebar_menu.querySelector("li a.active").classList.remove("active");
+      this.classList.add("active");
+    }
+  }
   //
   // Loade manage tables
   document
