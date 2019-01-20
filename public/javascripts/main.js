@@ -296,7 +296,8 @@
         col_lg_6 = helper.createNode({
           tag: "div",
           parent: root,
-          class: !isAdminModalOpen ? "col-md-6 col-lg-4" : "col"
+          //class: !isAdminModalOpen ? "col-md-6 col-lg-4" : "col"
+          class: "col"
         });
         card_box = helper.createNode({
           tag: "div",

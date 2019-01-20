@@ -7,6 +7,6 @@
     "user": "ivanbrajkovic",
     "host": "localhost",
     "port": "5432",
-    "initial": "pivovara_test"
+    "initial": "vinarija"
   }
 }
