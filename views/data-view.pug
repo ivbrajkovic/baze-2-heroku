@@ -2,9 +2,13 @@
 //- h3 DEBUG - All product test
 
 - data = db_data[0]
+//- args = args
 if data
   table#editable.table.table-striped.shadow-2      
     thead
+      if args
+        tr
+          th(colspan="10")= args.view_name
       tr
         each val, index in data
           th= index

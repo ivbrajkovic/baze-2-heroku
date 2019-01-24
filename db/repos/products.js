@@ -31,6 +31,21 @@ class ProductsRepository {
     return this.db.any(sql.view_all_product);
   }
 
+  // Returns skladiste records;
+  view_skladiste() {
+    return this.db.any(sql.view_skladiste);
+  }
+
+  // Returns skladiste records;
+  view_maloprodaja() {
+    return this.db.any(sql.view_maloprodaja);
+  }
+
+  // Returns skladiste records;
+  view_veleprodaja() {
+    return this.db.any(sql.view_veleprodaja);
+  }
+
   // Update row
   updateRow(data) {
     // console.log("DEBUG 1: ", data);

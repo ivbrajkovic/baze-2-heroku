@@ -22,7 +22,10 @@ module.exports = {
   // external queries for Products:
   products: {
     allTablesDB: sql("products/all-tables-db.sql"),
-    view_all_product: sql("products/view-all-product.sql"),
+    view_all_product: sql("products/table-all-product.sql"),
+    view_skladiste: sql("products/table-skladiste.sql"),
+    view_maloprodaja: sql("products/table-maloprodaja.sql"),
+    view_veleprodaja: sql("products/table-veleprodaja.sql"),
     table_all_manage: sql("products/table-all-manage.sql"),
     row_delete: sql("products/row-delete.sql"),
     row_update: sql("products/row-update.sql"),

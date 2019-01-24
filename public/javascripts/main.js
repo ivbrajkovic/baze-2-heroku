@@ -129,6 +129,30 @@
     }
   }
   //
+  // Show all products view
+  document.getElementById("view-all-product").onclick = () => {
+    helper.deleteAll(prikaz_podataka);
+    helper.getURL(prikaz_podataka, "/all");
+  };
+  //
+  // Show skladiste view
+  document.getElementById("view-skladiste").onclick = () => {
+    helper.deleteAll(prikaz_podataka);
+    helper.getURL(prikaz_podataka, "/skladiste");
+  };
+  //
+  // Show maloprodaja view
+  document.getElementById("view-maloprodaja").onclick = () => {
+    helper.deleteAll(prikaz_podataka);
+    helper.getURL(prikaz_podataka, "/maloprodaja");
+  };
+  //
+  // Show veleprodaja view
+  document.getElementById("view-veleprodaja").onclick = () => {
+    helper.deleteAll(prikaz_podataka);
+    helper.getURL(prikaz_podataka, "/veleprodaja");
+  };
+  //
   // Loade manage tables
   document
     .getElementById("manage-tables")
@@ -175,11 +199,7 @@
   //
   //#region Admin
   //
-  // Show all products
-  document.getElementById("view-all-product").onclick = () => {
-    helper.deleteAll(prikaz_podataka);
-    helper.getURL(prikaz_podataka, "/all");
-  };
+
   // Open admin modal
   document.getElementById("view-admin-modal").onclick = () => {
     adminModal.modal();
